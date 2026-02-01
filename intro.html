@@ -10,15 +10,20 @@
 <div id="floating-hearts"></div>
 
 <div class="intro">
-<h1>💖 A Surprise for My Dii 💖</h1>
+
+<h1>🔒 Secret Surprise for My Dii 💖</h1>
 
 <p>
-Hey Dii 🌸  
-This is a small little world made only for you ✨  
-Tap start and let the magic begin 💌
+Only one special person can enter this world 🌸✨  
+If you are my Dii… type the password 💌  
 </p>
 
-<button onclick="startIntro()">Start 💕</button>
+<input id="pass" class="passbox" placeholder="Enter Password...">
+
+<button onclick="unlock()">Unlock 💖</button>
+
+<p id="msg"></p>
+
 </div>
 
 <audio id="bgMusic" loop>
@@ -26,11 +31,16 @@ Tap start and let the magic begin 💌
 </audio>
 
 <script>
-function startIntro(){
-let music=document.getElementById("bgMusic");
-music.play();
+function unlock(){
+let p=document.getElementById("pass").value;
+
+if(p==="12-04-2005"){
 localStorage.setItem("music","on");
-setTimeout(()=>{window.location.href="index.html";},1200);
+window.location.href="index.html";
+}
+else{
+document.getElementById("msg").innerHTML="❌ Wrong password... Only Dii can enter 😌💖";
+}
 }
 </script>
 
