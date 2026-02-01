@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Letter for Dii 💌</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="floating-hearts"></div>
+
+<div class="musicbar">
+<button onclick="toggleMusic()">🎵</button>
+<input type="range" min="0" max="1" step="0.01" value="0.5" oninput="setVolume(this.value)">
+<audio id="bgMusic" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="page">
+<h1>My Love Letter for You Dii 💌</h1>
+
+<p id="typing"></p>
+
+<a class="next" href="ending.html">Final Surprise 🎆</a>
+</div>
+
+<script>
+let text="Dii… ❤️\n\nYou are my comfort ☁️\nYou are my happiness 🌷\nYou are my magic ✨\n\nEvery smile of yours makes my world brighter 😭💖\n\nI promise to always love you,\ncare for you,\nand stay with you forever.\n\nHappy Valentine’s Day Dii 💕\n\nI love you endlessly ❤️";
+let idx=0;
+function type(){
+if(idx<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(idx);
+idx++;
+setTimeout(type,40);
+}
+}
+type();
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

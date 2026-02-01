@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Memories of Dii 📸</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="floating-hearts"></div>
+
+<div class="musicbar">
+<button onclick="toggleMusic()">🎵</button>
+<input type="range" min="0" max="1" step="0.01" value="0.5" oninput="setVolume(this.value)">
+<audio id="bgMusic" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="page">
+<h1>Moments of My Dii 📸💖</h1>
+
+<p>
+Every picture of you feels like a dream 🌷  
+You are my favorite view ✨💕
+</p>
+
+<div class="slider">
+<img id="slide" src="images/girl1.jpg">
+</div>
+
+<a class="next" href="letter.html">Final Letter ➝</a>
+</div>
+
+<script>
+let pics=["images/girl1.jpg","images/girl2.jpg","images/girl3.jpg","images/girl4.jpg"];
+let i=0;
+setInterval(()=>{
+i=(i+1)%pics.length;
+document.getElementById("slide").src=pics[i];
+},2000);
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
